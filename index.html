@@ -123,9 +123,9 @@
 
 
 				<div class="outer-box">
-					<a href="tel:+92(8800)9806" class="info-btn">
+					<a href="tel:+91 8816818908" class="info-btn">
 						<i class="icon fa fa-phone"></i>
-						<small>Call Anytime</small><br> +92 (8800) - 8960
+						<small>Call Anytime</small><br> +91 88168-18908
 					</a>
 
 					<!-- <div class="ui-btn-outer">
@@ -175,7 +175,7 @@
 						<div class="contact-info-box">
 							<span class="icon lnr-icon-envelope1"></span>
 							<span class="title">Send Email</span>
-							<a href="mailto:help@company.com">Manzillearningassistance@gmail.com</a>
+							<a href="Manzillearningassistance@gmail.com">Manzillearningassistance@gmail.com</a>
 						</div>
 					</li>
 					<li>
@@ -965,6 +965,10 @@
 									</div>
 
 									<div class="form-group">
+										<input id="course" type="text" name="Course" placeholder="Course Name" required>
+									</div>
+
+									<div class="form-group">
 										<button class="theme-btn btn-style-one" type="submit" name="submit-form" onclick="save()">Send Request</button>
 									</div>
 								
@@ -1542,14 +1546,24 @@ function save(){
 name=document.getElementById("name").value
 phone=document.getElementById("phone").value
 mail=document.getElementById("mail").value
+course=document.getElementById("course").value
 
 firebase.database().ref("/").child(phone).update({
 	Name:name,
 	Phone:phone,
-	Mail:mail
+	Mail:mail,
+	Course:course
 
 })
 alert("Registered Successfully")
+clear()
+
+function clear(){
+	document.getElementById("name").value=""
+	document.getElementById("phone").value=""
+	document.getElementById("mail").value=""
+	document.getElementById("course").value=""
+}
 
 // const obj={
 //     Name:name,
