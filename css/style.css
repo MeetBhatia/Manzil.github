@@ -11387,3 +11387,12 @@ Sidebar
 #manzil{
   color: #00c7c4;
 }
+
+#meet:hover{
+  color: white;
+}
+
+.heading{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #797f7d;
+}
