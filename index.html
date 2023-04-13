@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <!-- Mirrored from kodesolution.com/html/2022/edulerns-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2023 07:36:46 GMT -->
@@ -188,7 +188,7 @@
 				<ul class="social-links">
 					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
 					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-					<li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+					<li><a href="https://www.linkedin.com/company/manzil-learning-assistances/?viewAsMember=true"><i class="fab fa-linkedin"></i></a></li>
 					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
 				</ul>
 			</nav>
@@ -861,6 +861,10 @@
 									</div>
 
 									<div class="form-group">
+										<input id="date" type="datetime-local" name="Date" placeholder="Date Time" required>
+									</div>
+
+									<div class="form-group">
 										<button class="theme-btn btn-style-one" type="submit" name="submit-form" onclick="save()">Send Request</button>
 									</div>
 								
@@ -1440,12 +1444,14 @@ name=document.getElementById("name").value
 phone=document.getElementById("phone").value
 mail=document.getElementById("mail").value
 course=document.getElementById("course").value
+date=document.getElementById("date").value
 
-firebase.database().ref("/").child(phone).update({
+firebase.database().ref("/Record").child(phone).update({
 	Name:name,
 	Phone:phone,
 	Mail:mail,
-	Course:course
+	Course:course,
+	Date:date
 
 })
 alert("Registered Successfully")
@@ -1456,6 +1462,7 @@ function clear(){
 	document.getElementById("phone").value=""
 	document.getElementById("mail").value=""
 	document.getElementById("course").value=""
+	document.getElementById("date").value=""
 }
 
 // const obj={
